@@ -1,0 +1,119 @@
+/* Datepicker */
+.datepicker {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+}
+
+.datepicker--day-name {
+    color: #52993f;
+}
+
+.datepicker--nav-title i {
+    color: #8e9eb2;
+}
+
+.datepicker--cell.-current- {
+    color: #63c551;
+    font-weight: 700;
+}
+
+.datepicker--cell.-selected- {
+    background-color: rgb(99,197,81);
+}
+
+.datepicker--cell.-selected-.-focus- {
+    background-color: rgb(99,197,81);
+}
+
+.datepicker--cell.-selected-.-current- {
+    background-color: rgb(99,197,81);
+}
+
+.datepicker__event {
+    font-weight: 700;
+}
+
+.dp-note {
+    background: rgb(99,197,81);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 1px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+/* News Archive - top */
+a.news-archive {
+    color: #586b7b;
+    font-weight: 400;
+}
+
+.row__news-archive {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+}
+
+/* News Archive - bottom */
+.news-archive {
+    color: #586b7b;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.icon-collapse svg {
+    width: 8px;
+    height: 10px;
+    fill: #586b7b;
+}
+
+.icon-collapse_reverse {
+    transform: rotate(180deg);    
+}
+
+.news-archive__years {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* for override existing style */
+.news-archive__row .news-archive__item .news-archive__link {
+    color: #586b7b;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: normal;
+}
+.news-archive__row .news-archive__item .news-archive__link:hover {
+    text-decoration: underline;
+}
+
+
+.news-archive__row {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+.news_archive__row_hidden {
+    display: none;
+}
+
+.news-archive__year {
+    display: inline-block;
+    vertical-align: top;
+}
+.news-archive__item {
+    padding-left: 9px;
+    padding-right: 45px;
+    display: inline-block;
+    white-space: normal;
+    overflow-x: hidden;
+}
+
+.news-archive__collapse {
+    display: inline;
+    cursor: pointer;
+}
+

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <link href="https://fond29.ru/bitrix/js/main/core/css/core.css?14697941113963" type="text/css" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/components/bitrix/news.list/news-home/style.css?1473074265150"
+        type="text/css" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/bootstrap.min.css?1469794503121260" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/jquery.bxslider.css?14697945033836" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/jquery.arcticmodal-0.3.css?1468914940654" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/themes/dark.css?1468914937424" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/jquery.mCustomScrollbar.min.css?146891499642839" type="text/css"
+        data-template-style="true" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/js/fancybox/jquery.fancybox.css?13712011494895" type="text/css"
+        data-template-style="true" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/css/style.css?153130127520375" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/components/bitrix/news.list/slider/style.css?1466370163150" type="text/css"
+        data-template-style="true" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/components/bitrix/news.list/urgent/style.css?1473083312150" type="text/css"
+        data-template-style="true" rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/styles.css?1517890497932" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+    <link href="https://fond29.ru/bitrix/templates/arch_green/template_styles.css?1517423803580" type="text/css" data-template-style="true"
+        rel="stylesheet" />
+
+    <!-- NEW -->
+    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/news.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">if (!window.BX) window.BX = { message: function (mess) { if (typeof mess == 'object') for (var i in mess) BX.message[i] = mess[i]; return true; } };</script>
+    <script type="text/javascript">(window.BX || top.BX).message({ 'JS_CORE_LOADING': 'Загрузка...', 'JS_CORE_NO_DATA': '- Нет данных -', 'JS_CORE_WINDOW_CLOSE': 'Закрыть', 'JS_CORE_WINDOW_EXPAND': 'Развернуть', 'JS_CORE_WINDOW_NARROW': 'Свернуть в окно', 'JS_CORE_WINDOW_SAVE': 'Сохранить', 'JS_CORE_WINDOW_CANCEL': 'Отменить', 'JS_CORE_WINDOW_CONTINUE': 'Продолжить', 'JS_CORE_H': 'ч', 'JS_CORE_M': 'м', 'JS_CORE_S': 'с', 'JSADM_AI_HIDE_EXTRA': 'Скрыть лишние', 'JSADM_AI_ALL_NOTIF': 'Показать все', 'JSADM_AUTH_REQ': 'Требуется авторизация!', 'JS_CORE_WINDOW_AUTH': 'Войти', 'JS_CORE_IMAGE_FULL': 'Полный размер' });</script>
+    <script type="text/javascript">(window.BX || top.BX).message({ 'LANGUAGE_ID': 'ru', 'FORMAT_DATE': 'DD.MM.YYYY', 'FORMAT_DATETIME': 'DD.MM.YYYY HH:MI:SS', 'COOKIE_PREFIX': 'BITRIX_SM', 'SERVER_TZ_OFFSET': '10800', 'SITE_ID': 's1', 'SITE_DIR': '/', 'USER_ID': '', 'SERVER_TIME': '1532257506', 'USER_TZ_OFFSET': '0', 'USER_TZ_AUTO': 'Y', 'bitrix_sessid': '1d1a0882d52e415cd2d4aed9860d91bc' });</script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/js/main/core/core.js?1470400064116644"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/js/main/core/core_ajax.js?147040006435542"></script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+            var counter = function () {
+                var cookie = (function (name) {
+                    var parts = ("; " + document.cookie).split("; " + name + "=");
+                    if (parts.length == 2) {
+                        try { return JSON.parse(decodeURIComponent(parts.pop().split(";").shift())); }
+                        catch (e) { }
+                    }
+                })("BITRIX_CONVERSION_CONTEXT_s1");
+                if (!cookie || cookie.EXPIRE < BX.message("SERVER_TIME")) {
+                    var request = new XMLHttpRequest();
+                    request.open("POST", "https://fond29.ru/bitrix/tools/conversion/ajax_counter.php", true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send(
+                        "SITE_ID=" + encodeURIComponent(BX.message("SITE_ID")) + "&" +
+                        "sessid=" + encodeURIComponent(BX.bitrix_sessid()) + "&" +
+                        "HTTP_REFERER=" + encodeURIComponent(document.referrer)
+                    );
+                }
+            };
+            if (window.frameRequestStart === true)
+                BX.addCustomEvent("onFrameDataReceived", counter);
+            else
+                BX.ready(counter);
+        })();
+    </script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/jquery.js?1469794503257551"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/bootstrap.min.js?146979450336868"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/jquery.bxslider.min.js?146979450319359"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/jquery.arcticmodal-0.3.min.js?14689149676118"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/jquery.mCustomScrollbar.concat.min.js?146891499745390"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/fancybox/jquery.fancybox.pack.js?137120114923135"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/js/main1.js?14852477165861"></script>
+    <script type="text/javascript" src="https://fond29.ru/bitrix/templates/arch_green/components/bitrix/search.suggest.input/.default/script.js?146979450312503"></script>
+    <script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "996341d0a33b8eeda6e23e4b23ff7ac4"]); _ba.push(["host", "fond29.ru"]); (function () { var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true; ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ba, s); })();</script>
+
+    <!-- NEW -->
+    <script src="./js/datepicker.min.js"></script>
+    <script src="./js/collapse.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://fond29.ru/bitrix/templates/arch_green/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://fond29.ru/bitrix/templates/arch_green/js/respond.min.js"></script>
+    <style>
+        /*.container
+        {
+            display:table;
+            width: 100%;
+        }
+        .row
+        {
+            height: 100%;
+            display: table-row;
+        }
+        .col-sm-4
+        {
+            display: table-cell;
+        }*/
+        header .container:first-child {
+            background-position: right;
+            background-size: 175px;
+        }
+    </style>
+    <![endif]-->
+    <meta name="mailru-verification" content="063e657514be05a6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="title" content="">
+    <link rel="shortcut icon" href="https://fond29.ru/bitrix/templates/arch_green/favicon.ico" type="image/x-icon">
+    <title>Фонд капремонта Архангельской области</title>
+</head>
+
+<body>
+    <!--<div class="reference"></div>-->
+    <div class="mob-menu">
+        <div class="row fullheight">
+            <div class="col-xs-12 fullheight" style="overflow-y: scroll;">
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="/repairs-progress/" title="Выполнение капитального ремонта" class="vertical-center">Выполнение капитального ремонта</a>
+                        </li>
+                        <li>
+                            <a href="/fundraising/" title="Сбор средств" class="vertical-center">Сбор средств</a>
+                        </li>
+                        <li>
+                            <a href="/payment-methods/" title="Способы оплаты" class="vertical-center">Способы оплаты</a>
+                        </li>
+                        <li>
+                            <a href="/contests/" title="Конкурсы" class="vertical-center">Конкурсы</a>
+                        </li>
+                        <li>
+                            <a href="/tarification/" title="Тарифыи льготы" class="vertical-center">Тарифы
+                                <br>и льготы</a>
+                        </li>
+                        <li>
+                            <a href="/complaints/" title="Претензионно-исковая работа" class="vertical-center">Претензионно-исковая работа</a>
+                        </li>
+                        <li>
+                            <a href="/reports/" title="Отчетность" class="vertical-center">Отчетность</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li>
+                            <a href="/about/" title="О фонде">О фонде</a>
+                            <ul>
+                                <li>
+                                    <a href="/about/chief-staff/">Руководство</a>
+                                </li>
+                                <li>
+                                    <a href="/about/contacts/" title="Контакты">Контакты</a>
+                                </li>
+                                <li>
+                                    <a href="/about/customer-reception/" title="Прием граждан">Прием граждан</a>
+                                </li>
+                                <li>
+                                    <a href="http://fond29.ru/upload/documents/kapitalny%20remont/4UL/Ustav_16082017.pdf" target="_blank" title="Устав">Устав</a>
+                                </li>
+                                <li>
+                                    <a href="/about/vacancies/" title="Вакансии">Вакансии</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/legal-information/" title="Нормативно-правовые акты">Нормативно-правовые акты</a>
+                        </li>
+                        <li>
+                            <a href="/information/" title="Информация">Информация</a>
+                            <ul>
+                                <li>
+                                    <a href="/information/for-owners/" title="Для собственников">Для собственников</a>
+                                </li>
+                                <li>
+                                    <a href="/information/for-legal-entities/" title="Для юридических лиц">Для юридических лиц</a>
+                                </li>
+                                <li>
+                                    <a href="/information/for-omsu/" title="Для органов местного самоуправления">Для ОМСУ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/useful-services/send-feedback/" title="Подать обращение">Подать обращение</a>
+                        </li>
+                        <li>
+                            <a href="/rights-and-responsibilities.php">Права и обязанности регионального оператора</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a class="close-menu-btn">
+                    <img src="https://fond29.ru/bitrix/templates/arch_green/images/arrow-left.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <a class="mob-menu-btn visible-xs">
+        <img src="https://fond29.ru/bitrix/templates/arch_green/images/menu-icon.png">
+    </a>
+    <header>
+        <div class="container">
+            <div class="row addmargin">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <a href="/">
+                        <img src="https://fond29.ru/bitrix/templates/arch_green/images/Logo.jpg" class="img-responsive center-block logo">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-9">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="comp-name">
+                                Некоммерческая организация
+                                <br> "Фонд капитального ремонта
+                                <br> многоквартирных домов
+                                <br> Архангельской области"
+                            </div>
+                        </div>
+                        <div class="visible-xs visible-sm col-xs-12 col-sm-6 col-md-4 text-center address">
+                            г. Архангельск, ул. Урицкого, д. 1, оф. 402
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 auth text-left">
+                            <div class="row">
+                                <div class="col-xxs-6 col-xs-6 col-sm-3 col-md-12 pull-left">
+                                    <a href="/login/">
+                                        <span class="login">Вход</span>
+                                    </a>
+                                </div>
+                                <div class="col-xxs-6 col-xs-6 col-sm-3 col-md-12 pull-left">
+                                    <a href="/login/?register=yes">
+                                        <span class="register">Регистрация</span>
+                                    </a>
+                                </div>
+                                <div class="visible-xs visible-sm col-xxs-12 col-xs-12 col-sm-6 searchbox">
+                                    <form action="/search/index.php">
+                                        <script>
+                                            BX.ready(function () {
+                                                var input = BX("qplSKIW");
+                                                if (input)
+                                                    new JsSuggest(input, 'pe:10,md5:,site:s1');
+                                            });
+                                        </script>
+                                        <IFRAME style="width:0px; height:0px; border: 0px;" src="javascript:''" name="qplSKIW_div_frame" id="qplSKIW_div_frame"></IFRAME>
+                                        <input size="15" name="q" id="qplSKIW" value="" class="search-suggest" type="text" autocomplete="off" placeholder="Поиск"
+                                        />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-4 text-right address">
+                            г. Архангельск, ул. Урицкого,
+                            <br> д. 1, оф. 402
+                            <br>
+                            <a href="http://vk.com/fond29" target="_blank" title="Мы ВКонтакте">
+                                <img width="30" height="30" src="https://fond29.ru/bitrix/templates/arch_green/images/VK.png" alt="Мы ВКонтакте">
+                            </a>
+                            <a href="http://fb.com/fond29" target="_blank" title="Мы на Facebook">
+                                <img width="30" height="30" src="https://fond29.ru/bitrix/templates/arch_green/images/FB.png" alt="Мы на Facebook">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row main-menu">
+                        <div class="hidden-xs col-sm-12 col-md-9 col-lg-8">
+                            <nav>
+                                <ul class="menu">
+                                    <li class="dropdown">
+                                        <a href="/about/" class="dropdown-toggle" title="О фонде">О фонде</a>
+                                        <ul class=" dropdown-menu">
+                                            <li>
+                                                <a href="/about/chief-staff/" title="Руководство">Руководство</a>
+                                            </li>
+                                            <li>
+                                                <a href="/about/contacts/" title="Контакты">Контакты</a>
+                                            </li>
+                                            <li>
+                                                <a href="/about/customer-reception/" title="Прием граждан">Прием граждан</a>
+                                            </li>
+                                            <li>
+                                                <a href="/about/order/" title="Устав">Устав</a>
+                                            </li>
+                                            <li>
+                                                <a href="/about/vacancies/" title="Вакансии">Вакансии</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/for-customers/" class="dropdown-toggle" title="Для пользователей">Для пользователей</a>
+                                        <ul class=" dropdown-menu">
+                                            <li>
+                                                <a href="/for-customers/instructions/" title="Пошаговые инструкции">Пошаговые инструкции</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/news/" title="Новости">Новости</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/useful-services/" class="dropdown-toggle" title="Полезные сервисы">Полезные сервисы</a>
+                                        <ul class=" dropdown-menu">
+                                            <li>
+                                                <a href="/useful-services/send-feedback/" title="Подать обращение">Подать обращение</a>
+                                            </li>
+                                            <li>
+                                                <a href="/useful-services/faq/" title="Часто задаваемые вопросы">Часто задаваемые вопросы</a>
+                                            </li>
+                                            <li>
+                                                <a href="/useful-services/check-a-bill/" title="Проверка квитанций">Проверка квитанций</a>
+                                            </li>
+                                            <li>
+                                                <a href="/unauthorized/pay2/" title="Оплатить квитанцию">Оплатить квитанцию</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-3 col-lg-4 searchbox pull-right">
+                            <form action="/search/index.php">
+                                <script>
+                                    BX.ready(function () {
+                                        var input = BX("qT1YQ8m");
+                                        if (input)
+                                            new JsSuggest(input, 'pe:10,md5:,site:s1');
+                                    });
+                                </script>
+                                <IFRAME style="width:0px; height:0px; border: 0px;" src="javascript:''" name="qT1YQ8m_div_frame" id="qT1YQ8m_div_frame"></IFRAME>
+                                <input size="15" name="q" id="qT1YQ8m" value="" class="search-suggest" type="text" autocomplete="off" placeholder="Поиск"
+                                />
+                            </form>
+                            <div class="text-right">
+                                <a href="/?version=highcontrast" class="poor-sight" title="версия для слабовидящих">Версия для слабовидящих</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="slider">
+                    <ul class="bxslider">
+                        <li id="bx_3218110189_1694">
+                            <a href="/">
+                                <img class="background" src="https://fond29.ru/upload/iblock/472/slide1_n.jpg" alt="слайд 1" title="слайд 1" />
+                                <span class="slider-caption">
+                                </span>
+                            </a>
+                        </li>
+                        <li id="bx_3218110189_1695" style="visibility: hidden;">
+                            <a href="/unauthorized/pay2/">
+                                <img class="background" src="https://fond29.ru/upload/iblock/5b1/slide2.jpg" alt="слайд 2" title="слайд 2" />
+                                <span class="slider-caption">
+                                    Фонд капитального ремонта
+                                    <br>Архангельской области </span>
+                            </a>
+                        </li>
+                        <li id="bx_3218110189_1696" style="visibility: hidden;">
+                            <a href="/cabinet/">
+                                <img class="background" src="https://fond29.ru/upload/iblock/4a8/slide3_n1.jpg" alt="слайд 3" title="слайд 3" />
+                                <span class="slider-caption">
+                                    Фонд капитального ремонта
+                                    <br>Архангельской области </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="container" id="overlay_link">
+                        <div class="col-xs-12">
+                            <div class="myprev"></div>
+                            <div class="mynext"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid nav hidden-xs">
+            <div class="stripes">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav>
+                                <ul class="menu">
+                                    <li>
+                                        <a href="/repairs/" title="Выполнение капитального ремонта" class="vertical-center">Выполнение
+                                            <br>капитального
+                                            <br>ремонта</a>
+                                    </li>
+                                    <li>
+                                        <a href="/fundraising/" title="Сбор средств" class="vertical-center">Сбор
+                                            <br>средств</a>
+                                    </li>
+                                    <li>
+                                        <a href="/payment-methods/" title="Способы оплаты" class="vertical-center">
+                                            <span class='kaching'></span>
+                                            <span>Способы
+                                                <br>оплаты</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/contests/" title="Конкурсы" class="vertical-center">Конкурсы</a>
+                                    </li>
+                                    <li>
+                                        <a href="/tarification/" title="Тарифы и льготы" class="vertical-center">Тарифы
+                                            <br>и льготы</a>
+                                    </li>
+                                    <li>
+                                        <a href="/complaints/" title="Претензионно-исковая работа" class="vertical-center">Претензионно-исковая
+                                            <br>работа</a>
+                                    </li>
+                                    <li>
+                                        <a href="/reports/" title="Отчетность" class="vertical-center">
+                                            <span class='doc'></span>Отчетность</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row alert alert-danger urgent">
+                <div class="container">
+                    <div class="news-list">
+                        <div class="text-center relative" id="bx_651765591_1016367" data-urgent="4fb5d4d0a3aac3fe7fb8b3a95799354c">
+                            <a class="close"></a>
+                            <a href="/news/27062018-2/">График выездных приемов граждан на июль 2018 года</a>
+                        </div>
+                        <div class="text-center relative" id="bx_651765591_930236" data-urgent="4d05c9b5cb6da26aa88763b5b1150830">
+                            <a class="close"></a>
+                            <a href="/news/29122017-4/">Оплата взносов на капитальный ремонт онлайн без регистрации</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="news-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row workarea">
+                <div class="hidden-xs col-sm-4 col-md-3">
+                    <div class="row sidemenu">
+                        <div class="col-xs-12">
+                            <div class="hidden-xs banner-top m-b-10">
+                                <img src="https://fond29.ru/bitrix/templates/arch_green/images/girl-1.jpg" alt="Телефон горячей линии 68-15-25">
+                            </div>
+                            <div class="hidden-xs banner-top m-b-10">
+                                <img src="https://fond29.ru/bitrix/templates/arch_green/images/regime4.jpg" alt="Режим работы горячей линии">
+                            </div>
+                            <div class="hidden-xs banner-top m-b-10">
+                                <a href="/useful-services/send-feedback/" title="Подать обращение">
+                                    <img src="https://fond29.ru/bitrix/templates/arch_green/images/feedback.jpg" alt="подать обращение">
+                                </a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/about/" title="О фонде">О фонде</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/about/chief-staff/">Руководство</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about/contacts/" title="Контакты">Контакты</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about/customer-reception/" title="Прием граждан">Прием граждан</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://fond29.ru/upload/documents/kapitalny%20remont/4UL/Ustav_16082017.pdf" target="_blank" title="Устав">Устав</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about/vacancies/" title="Вакансии">Вакансии</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/legal-information/" title="Нормативно-правовые акты">Нормативно-правовые акты</a>
+                                </li>
+                                <li>
+                                    <a href="/information/" title="Информация">Информация</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/information/for-owners/" title="Для собственников">Для собственников</a>
+                                        </li>
+                                        <li>
+                                            <a href="/information/for-legal-entities/" title="Для юридических лиц">Для юридических лиц</a>
+                                        </li>
+                                        <li>
+                                            <a href="/information/for-omsu/" title="Для органов местного самоуправления">Для ОМСУ</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/useful-services/send-feedback/" title="Подать обращение">Подать обращение</a>
+                                </li>
+                                <li>
+                                    <a href="/rights-and-responsibilities.php">Права и обязанности регионального оператора</a>
+                                </li>
+                            </ul>
+                            <div class="hidden-xs banner-top m-b-10">
+                                <script type="text/javascript" src="//vk.com/js/api/openapi.js?139"></script>
+                                <!-- VK Widget -->
+                                <div id="vk_groups"></div>
+                                <script type="text/javascript">
+                                    VK.Widgets.Group("vk_groups", { mode: 1, width: "262" }, 130532904);
+                                </script>
+                            </div>
+                            <div class="news-datepicker datepicker-here"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="active"><a href="#tab-1" data-toggle="tab">Лента новостей</a></li>
+                                <li role="presentation" class="float-right"><a href="#tab-2" data-toggle="tab"><span class="tab-main"><i class="fa fa-bell-o" aria-hidden="true"></i> Уведомление о приемках</span><span class="tab-mobile">Уведомления</span></a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="tab-1">
+                                    <div class="clearfix kick-bottom-25">
+                                        <div class="left-news">
+                                            <div class="top-news">
+                                                <div class="top-news-img">
+                                                    <img src="./img/news-img-1.jpg">
+                                                </div>
+                                                <div class="fat-10">
+                                                    <div class="">
+                                                        <span class="label label-default">14.08.2018 15:31</span>
+                                                    </div>
+                                                    <div class="top-news-text">
+                                                        <a href="">В СЕВЕРОДВИНСКЕ НАЧИНАЮТСЯ ПРИЕМОЧНЫЕ РАБОТЫ УСТАНОВЛЕННОГО ЛИФТОВОГО ОБОРУДОВАНИЯ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-news">
+                                            <div class="top-news top-news_small">
+                                                <div class="top-news-img">
+                                                    <img src="./img/news-img-2.png">
+                                                </div>
+                                                <div class="fat-10">
+                                                    <div class="">
+                                                        <span class="label label-default">14.08.2018 15:31</span>
+                                                    </div>
+                                                    <div class="top-news-text">
+                                                        <a href="#">В СЕВЕРОДВИНСКЕ НАЧИНАЮТСЯ ПРИЕМОЧНЫЕ РАБОТЫ УСТАНОВЛЕННОГО ЛИФТОВОГО ОБОРУДОВАНИЯ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="top-news top-news_small">
+                                                <div class="top-news-img">
+                                                    <img src="./img/news-img-3.png">
+                                                </div>
+                                                <div class="fat-10">
+                                                    <div class="">
+                                                        <span class="label label-default">14.08.2018 15:31</span>
+                                                    </div>
+                                                    <div class="top-news-text">
+                                                        <a href="">В СЕВЕРОДВИНСКЕ НАЧИНАЮТСЯ ПРИЕМОЧНЫЕ РАБОТЫ УСТАНОВЛЕННОГО ЛИФТОВОГО ОБОРУДОВАНИЯ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="news-list">
+                                        <div class="news-item m-b-10 alert alert-warning" id="">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <span class="label label-default">14.08.2018 15:31</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="/news/14082018-1/"><b>ОСНОВНЫЕ МЕРОПРИЯТИЯ ПО РЕМОНТУ СИСТЕМ ОТОПЛЕНИЯ ЗАВЕРШЕНЫ В 51% ДОМОВ</b></a>
+                                                    <div class="clearfix kick-top-14">
+                                                        <img class="news-img" src="./img/news-img.jpg">
+                                                        <p class="news-text">Всего по КП-2018 запланирован ремонт систем отопления на 170 МКД. Заключено договоров на ремонт отопления по 137 МК</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news-item m-b-10 alert alert-warning" id="">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <span class="label label-default">14.08.2018 15:31</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="/news/14082018-1/"><b>ОСНОВНЫЕ МЕРОПРИЯТИЯ ПО РЕМОНТУ СИСТЕМ ОТОПЛЕНИЯ ЗАВЕРШЕНЫ В 51% ДОМОВ</b></a>
+                                                    <div class="clearfix kick-top-14">
+                                                        <img class="news-img" src="./img/news-img.jpg">
+                                                        <p class="news-text">Всего по КП-2018 запланирован ремонт систем отопления на 170 МКД. Заключено договоров на ремонт отопления по 137 МК</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-2">
+                                    <div class="news-list">
+                                        <div class="news-item m-b-10 alert alert-warning bell-item" id="">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="clearfix">
+                                                        <div class="bell">
+                                                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="bell-title">
+                                                            <div>
+                                                                <span class="label label-default">14.08.2018 15:31</span>
+                                                            </div>
+                                                            <div>
+                                                                <a href="/news/14082018-1/"><b>ОСНОВНЫЕ МЕРОПРИЯТИЯ ПО РЕМОНТУ СИСТЕМ ОТОПЛЕНИЯ ЗАВЕРШЕНЫ В 51% ДОМОВ</b></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kick-top-14">
+                                                        <p class="">Всего по КП-2018 запланирован ремонт систем отопления на 170 МКД. Заключено договоров на ремонт отопления по 137 МК</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-2 col-md-3">
+                    <div class="hidden-xs banner-top m-b-10">
+                        <iframe src="https://vk.com/video_ext.php?oid=-119796134&id=456239124&hash=d743cf7475249668" width="262" height="137" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="/unauthorized/pay2/">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/banner-pay.jpg" alt="Оплатить капремонт" />
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="/anonymous-treatment/">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/inform-fond.jpg" alt="Проинформируй Фонд" />
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://dvinaland.ru/" title="Правительство Архангельской области">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/PravitelstvoAO.jpg" alt="Правительство Архангельской области">
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://dom.gosuslugi.ru/" title="ГИС ЖКХ">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/GISGKH.jpg" alt="ГИС ЖКХ">
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://www.reformagkh.ru/" title="Реформа ЖКХ">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/ReformaGKH.jpg" alt="Реформа ЖКХ">
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://www.minstroyrf.ru">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/minstroy-logo.png" alt="Минстрой РФ" />
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://www.gosuslugi.ru/">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/gosuslugi.png" alt="Портал ГосУслуг" />
+                        </a>
+                    </div>
+                    <div class="hidden-xs banner-top m-b-10">
+                        <a href="http://gosuslugi29.ru/">
+                            <img src="https://fond29.ru/bitrix/templates/arch_green/images/gosuslugi29.jpg" alt="Архангельский портал ГосУслуг" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="footer-shape"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3 logo">
+                                <img src="https://fond29.ru/bitrix/templates/arch_green/images/logo-footer.png" class="img-responsive footer-logo">
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="footer-nav pull-right text-right">
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="/about/" title="О фонде">О фонде</a>
+                                        </li>
+                                        <li>
+                                            <a href="/for-customers/" title="Для пользователей">Для пользователей</a>
+                                        </li>
+                                        <li>
+                                            <a href="/news/" title="Новости">Новости</a>
+                                        </li>
+                                        <li>
+                                            <a href="/useful-services/" title="Полезные сервисы">Полезные сервисы</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-info pull-right">
+                                    163004, г. Архангельск, ул. Урицкого, д. 1, оф. 402, т. (8182)68-15-25
+                                    <br> © Некоммерческая организация &laquo;Фонд капитального ремонта многоквартирных домов
+                                    Архангельской области&raquo;
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-6 pull-right img-logo">
+                                <div class="row">
+                                    <div class="col-xs-12 text-right">
+                                        <span class="promotext">Сделано в
+                                            <a href="http://image-mg.com" title="Рекламное агенство &laquo;Имидж-медиа&raquo;">
+                                                <img src="https://fond29.ru/bitrix/templates/arch_green/images/img_logo_footer.png" alt="Image-media.com">
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function customScrollTop() {
+            var sl = $('.bx-wrapper');
+            if (sl.length > 0) {
+                var pos = sl.offset().top + sl.height();
+                //console.log([$(window).offsetTop, pos]);
+                //console.log([sl.offset().top, sl.height()]);
+                if ($(window).scrollTop() < pos && document.location.search.indexOf("noScroll=Y") == -1) {
+                    //console.log('scroll');
+                    $('body').animate({ 'scrollTop': pos }, 500);
+                }
+            }
+        }
+    </script>
+
+    <!-- NEW -->
+    <script>
+        var $picker = $('.news-datepicker');
+        
+        // Список дат с новостями
+        var eventDates = [
+            "2017-01-10",
+            "2018-06-10",
+            "2018-06-11",
+            "2018-07-11",
+            "2018-07-13",
+            "2018-07-14",
+            "2018-07-17",
+            "2018-07-22",
+            
+        ];
+
+        function dateToString(date) {
+            return date.getFullYear() + '-' +
+                  ('0' + (date.getMonth()+1)).slice(-2) + '-' +
+                  ('0' + date.getDate()).slice(-2);
+        }
+
+        $picker.datepicker({
+            onRenderCell: function (date, cellType) {
+
+                var currentDate = date.getDate();
+                
+                if(cellType == 'day' && eventDates.indexOf(dateToString(date)) != -1) {
+                    return {
+                        classes: 'datepicker__event',
+                        html: currentDate + '<span class="dp-note"></span>'
+                    }
+                }
+            },
+            onSelect: function onSelect(fd, date) {
+                if (date && eventDates.indexOf(dateToString(date)) != -1) {
+                    window.location.href = '?' + dateToString(date);
+                }
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
